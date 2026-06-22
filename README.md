@@ -1,26 +1,37 @@
-# Nezha Agent
-  
-Agent of Nezha Monitoring
+# Kulin Agent
 
-## Contributors
+Kulin Agent 是 Kulin 面板配套的轻量服务器探针，基于 Nezha Agent 精简改名，保持与 Kulin Dashboard 当前 gRPC 协议兼容。
 
-<!--GAMFC_DELIMITER--><a href="https://github.com/naiba" title="naiba"><img src="https://avatars.githubusercontent.com/u/29243953?v=4" width="50;" alt="naiba"/></a>
-<a href="https://github.com/uubulb" title="UUBulb"><img src="https://avatars.githubusercontent.com/u/35923940?v=4" width="50;" alt="UUBulb"/></a>
-<a href="https://github.com/funnyzak" title="Leon"><img src="https://avatars.githubusercontent.com/u/2562087?v=4" width="50;" alt="Leon"/></a>
-<a href="https://github.com/zhangnew" title="zhangnew"><img src="https://avatars.githubusercontent.com/u/9146834?v=4" width="50;" alt="zhangnew"/></a>
-<a href="https://github.com/AEnjoy" title="AEnjoy"><img src="https://avatars.githubusercontent.com/u/37976919?v=4" width="50;" alt="AEnjoy"/></a>
-<a href="https://github.com/wwng2333" title=":D"><img src="https://avatars.githubusercontent.com/u/17147265?v=4" width="50;" alt=":D"/></a>
-<a href="https://github.com/DarcJC" title="Darc Z."><img src="https://avatars.githubusercontent.com/u/53445798?v=4" width="50;" alt="Darc Z."/></a>
-<a href="https://github.com/geniucker-dev" title="Geniucker Zhu"><img src="https://avatars.githubusercontent.com/u/165345526?v=4" width="50;" alt="Geniucker Zhu"/></a>
-<a href="https://github.com/ChrisKimZHT" title="Haotian Zou"><img src="https://avatars.githubusercontent.com/u/49368462?v=4" width="50;" alt="Haotian Zou"/></a>
-<a href="https://github.com/yuanweize" title="IYUANWEIZE"><img src="https://avatars.githubusercontent.com/u/30067203?v=4" width="50;" alt="IYUANWEIZE"/></a>
-<a href="https://github.com/NewbieOrange" title="NewbieOrange"><img src="https://avatars.githubusercontent.com/u/7200314?v=4" width="50;" alt="NewbieOrange"/></a>
-<a href="https://github.com/pexcn" title="Sing Yu Chan"><img src="https://avatars.githubusercontent.com/u/4590439?v=4" width="50;" alt="Sing Yu Chan"/></a>
-<a href="https://github.com/elysia-best" title="Yinan Qin"><img src="https://avatars.githubusercontent.com/u/39023210?v=4" width="50;" alt="Yinan Qin"/></a>
-<a href="https://github.com/miaojior" title="miaojior"><img src="https://avatars.githubusercontent.com/u/79573934?v=4" width="50;" alt="miaojior"/></a>
-<a href="https://github.com/xream" title="xream"><img src="https://avatars.githubusercontent.com/u/1210282?v=4" width="50;" alt="xream"/></a>
-<a href="https://github.com/xykt" title="xykt"><img src="https://avatars.githubusercontent.com/u/152045469?v=4" width="50;" alt="xykt"/></a>
-<a href="https://github.com/zhdsmy" title="zhdsmy"><img src="https://avatars.githubusercontent.com/u/8348149?v=4" width="50;" alt="zhdsmy"/></a>
-<a href="https://github.com/matchch" title="卖女孩的小火柴"><img src="https://avatars.githubusercontent.com/u/44471469?v=4" width="50;" alt="卖女孩的小火柴"/></a>
-<a href="https://github.com/liuran001" title="baka"><img src="https://avatars.githubusercontent.com/u/32791471?v=4" width="50;" alt="baka"/></a>
-<a href="https://github.com/akiasprin" title="kevi"><img src="https://avatars.githubusercontent.com/u/25278728?v=4" width="50;" alt="kevi"/></a><!--GAMFC_DELIMITER_END-->
+## 安装
+
+Linux / macOS：
+
+```bash
+curl -L https://raw.githubusercontent.com/shuijiao1/Kulin/master/script/agent-install.sh -o kulin-agent.sh && chmod +x kulin-agent.sh && env NZ_SERVER=<面板Agent地址> NZ_TLS=true NZ_CLIENT_SECRET=<Agent密钥> ./kulin-agent.sh
+```
+
+Windows PowerShell：
+
+```powershell
+$env:NZ_SERVER="<面板Agent地址>";$env:NZ_TLS="true";$env:NZ_CLIENT_SECRET="<Agent密钥>";Invoke-WebRequest https://raw.githubusercontent.com/shuijiao1/Kulin/master/script/agent-install.ps1 -OutFile C:\kulin-agent.ps1;powershell.exe C:\kulin-agent.ps1
+```
+
+可选环境变量：
+
+- `NZ_UUID`：指定服务器 UUID
+- `NZ_DISABLE_AUTO_UPDATE`：禁用自动更新
+- `NZ_DISABLE_FORCE_UPDATE`：禁用强制更新
+- `NZ_DISABLE_COMMAND_EXECUTE`：禁用命令执行
+- `NZ_SKIP_CONNECTION_COUNT`：跳过连接数采集
+
+## 发布
+
+Release 从 `v0.1.1` 开始，产物命名为：
+
+```text
+kulin-agent_<goos>_<goarch>.zip
+```
+
+## 上游
+
+本项目基于 `nezhahq/agent` 调整，感谢上游项目。

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/nezhahq/agent/model"
+	"github.com/shuijiao1/Kulin-Agent/model"
 )
 
 // AuthHandler 闭包原先直接读全局 agentConfig.ClientSecret/UUID；applyPendingReload

@@ -14,7 +14,7 @@ import (
 	"time"
 )
 
-const MacOSChromeUA = "nezha-agent/1.0"
+const MacOSChromeUA = "kulin-agent/1.0"
 
 func IsWindows() bool {
 	return os.PathSeparator == '\\' && os.PathListSeparator == ';'

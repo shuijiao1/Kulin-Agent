@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/nezhahq/agent/proto"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 	"google.golang.org/grpc/metadata"
 )
 
@@ -31,10 +31,10 @@ func (s *concurrencyTrackingStream) Send(d *pb.IOStreamData) error {
 	return nil
 }
 
-func (s *concurrencyTrackingStream) CloseSend() error                  { return nil }
-func (s *concurrencyTrackingStream) Recv() (*pb.IOStreamData, error)    { return nil, nil }
-func (s *concurrencyTrackingStream) Header() (metadata.MD, error)       { return metadata.MD{}, nil }
-func (s *concurrencyTrackingStream) Trailer() metadata.MD               { return metadata.MD{} }
+func (s *concurrencyTrackingStream) CloseSend() error                { return nil }
+func (s *concurrencyTrackingStream) Recv() (*pb.IOStreamData, error) { return nil, nil }
+func (s *concurrencyTrackingStream) Header() (metadata.MD, error)    { return metadata.MD{}, nil }
+func (s *concurrencyTrackingStream) Trailer() metadata.MD            { return metadata.MD{} }
 
 // gRPC Go ClientStream does not allow concurrent SendMsg invocations
 // (https://pkg.go.dev/google.golang.org/grpc#ClientStream).

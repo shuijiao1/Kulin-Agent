@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/nezhahq/agent/proto"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 )
 
 type concurrencyTrackingResultSink struct {

@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/nezhahq/agent/proto"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 
-	"github.com/nezhahq/agent/model"
+	"github.com/shuijiao1/Kulin-Agent/model"
 )
 
 // Race scenario: handleReportConfigTask reads `agentConfig.DisableCommandExecute`

@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nezhahq/agent/model"
-	pb "github.com/nezhahq/agent/proto"
+	"github.com/shuijiao1/Kulin-Agent/model"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 )
 
 // handleApplyConfigTask must explicitly surface the DisableCommandExecute

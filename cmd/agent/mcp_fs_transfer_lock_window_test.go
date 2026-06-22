@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nezhahq/agent/model"
-	pb "github.com/nezhahq/agent/proto"
+	"github.com/shuijiao1/Kulin-Agent/model"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 	"google.golang.org/grpc/metadata"
 )
 
@@ -16,10 +16,10 @@ import (
 // network receive window.
 type blockingRecvStream struct {
 	pb.NezhaService_IOStreamClient
-	release  chan struct{}
-	recvHit  chan struct{}
-	payload  []byte
-	served   bool
+	release chan struct{}
+	recvHit chan struct{}
+	payload []byte
+	served  bool
 }
 
 func (s *blockingRecvStream) Send(*pb.IOStreamData) error { return nil }

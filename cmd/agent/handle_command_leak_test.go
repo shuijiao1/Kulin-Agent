@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/nezhahq/agent/proto"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 )
 
 // runCommandTask drives handleCommandTask the same way the task receive loop

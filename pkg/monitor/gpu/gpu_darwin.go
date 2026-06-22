@@ -10,7 +10,7 @@ import (
 
 	"github.com/ebitengine/purego"
 
-	"github.com/nezhahq/agent/pkg/util"
+	"github.com/shuijiao1/Kulin-Agent/pkg/util"
 )
 
 type (

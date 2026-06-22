@@ -33,17 +33,17 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/resolver"
 
-	"github.com/nezhahq/agent/cmd/agent/commands"
-	"github.com/nezhahq/agent/model"
-	fm "github.com/nezhahq/agent/pkg/fm"
-	"github.com/nezhahq/agent/pkg/fsnotifyx"
-	"github.com/nezhahq/agent/pkg/logger"
-	"github.com/nezhahq/agent/pkg/monitor"
-	"github.com/nezhahq/agent/pkg/processgroup"
-	"github.com/nezhahq/agent/pkg/pty"
-	"github.com/nezhahq/agent/pkg/util"
-	utlsx "github.com/nezhahq/agent/pkg/utls"
-	pb "github.com/nezhahq/agent/proto"
+	"github.com/shuijiao1/Kulin-Agent/cmd/agent/commands"
+	"github.com/shuijiao1/Kulin-Agent/model"
+	fm "github.com/shuijiao1/Kulin-Agent/pkg/fm"
+	"github.com/shuijiao1/Kulin-Agent/pkg/fsnotifyx"
+	"github.com/shuijiao1/Kulin-Agent/pkg/logger"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor"
+	"github.com/shuijiao1/Kulin-Agent/pkg/processgroup"
+	"github.com/shuijiao1/Kulin-Agent/pkg/pty"
+	"github.com/shuijiao1/Kulin-Agent/pkg/util"
+	utlsx "github.com/shuijiao1/Kulin-Agent/pkg/utls"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 )
 
 var (
@@ -106,7 +106,7 @@ const (
 	minUpdateInterval = 1440
 	maxUpdateInterval = 2880
 
-	binaryName = "nezha-agent"
+	binaryName = "kulin-agent"
 )
 
 // agentCredentials is the atomic-snapshot type behind liveCredentials. We keep
@@ -219,7 +219,7 @@ func preRun(configPath string) error {
 
 func main() {
 	app := &cli.App{
-		Usage:   "哪吒监控 Agent",
+		Usage:   "Kulin Agent",
 		Version: version,
 		Flags: []cli.Flag{
 			&cli.StringFlag{Name: "config", Aliases: []string{"c"}, Usage: "配置文件路径"},
@@ -424,7 +424,7 @@ func runService(action string, path string) {
 		Name:             name,
 		DisplayName:      filepath.Base(executablePath),
 		Arguments:        args,
-		Description:      "哪吒监控 Agent",
+		Description:      "Kulin Agent",
 		WorkingDirectory: filepath.Dir(executablePath),
 		Option:           winConfig,
 	}
@@ -764,7 +764,7 @@ func doSelfUpdate(useLocalVersion bool) (exit bool) {
 			printf("更新失败: %v", erru)
 			return
 		}
-		latest, err = updater.UpdateSelf(v, "naibahq/agent")
+		latest, err = updater.UpdateSelf(v, "shuijiao1/Kulin-Agent")
 	case agentConfig.UseAtomGitToUpgrade:
 		updater, erru := selfupdate.NewAtomGitUpdater(selfupdate.Config{
 			BinaryName: binaryName,
@@ -773,7 +773,7 @@ func doSelfUpdate(useLocalVersion bool) (exit bool) {
 			printf("更新失败: %v", erru)
 			return
 		}
-		latest, err = updater.UpdateSelf(v, "naiba/nezha-agent")
+		latest, err = updater.UpdateSelf(v, "shuijiao1/Kulin-Agent")
 	case monitor.CachedCountryCode == "cn":
 		if rand.Intn(2) == 0 {
 			updater, erru := selfupdate.NewGiteeUpdater(selfupdate.Config{
@@ -783,7 +783,7 @@ func doSelfUpdate(useLocalVersion bool) (exit bool) {
 				printf("更新失败: %v", erru)
 				return
 			}
-			latest, err = updater.UpdateSelf(v, "naibahq/agent")
+			latest, err = updater.UpdateSelf(v, "shuijiao1/Kulin-Agent")
 		} else {
 			updater, erru := selfupdate.NewAtomGitUpdater(selfupdate.Config{
 				BinaryName: binaryName,
@@ -792,7 +792,7 @@ func doSelfUpdate(useLocalVersion bool) (exit bool) {
 				printf("更新失败: %v", erru)
 				return
 			}
-			latest, err = updater.UpdateSelf(v, "naiba/nezha-agent")
+			latest, err = updater.UpdateSelf(v, "shuijiao1/Kulin-Agent")
 		}
 	default:
 		updater, erru := selfupdate.NewUpdater(selfupdate.Config{
@@ -802,7 +802,7 @@ func doSelfUpdate(useLocalVersion bool) (exit bool) {
 			printf("更新失败: %v", erru)
 			return
 		}
-		latest, err = updater.UpdateSelf(v, "nezhahq/agent")
+		latest, err = updater.UpdateSelf(v, "shuijiao1/Kulin-Agent")
 	}
 
 	if err != nil {

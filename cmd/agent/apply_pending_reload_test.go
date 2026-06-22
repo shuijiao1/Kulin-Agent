@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nezhahq/agent/model"
+	"github.com/shuijiao1/Kulin-Agent/model"
 )
 
 // Race scenario: T1's AfterFunc callback gets queued to run after its 10s

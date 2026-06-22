@@ -1,4 +1,4 @@
-module github.com/nezhahq/agent
+module github.com/shuijiao1/Kulin-Agent
 
 go 1.26
 

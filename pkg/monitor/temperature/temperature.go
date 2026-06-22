@@ -8,7 +8,7 @@ import (
 
 	"github.com/shirou/gopsutil/v4/sensors"
 
-	"github.com/nezhahq/agent/model"
+	"github.com/shuijiao1/Kulin-Agent/model"
 )
 
 var sensorIgnoreList = []string{

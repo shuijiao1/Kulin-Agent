@@ -12,16 +12,16 @@ import (
 	"github.com/shirou/gopsutil/v4/mem"
 	"github.com/shirou/gopsutil/v4/process"
 
-	"github.com/nezhahq/agent/model"
-	"github.com/nezhahq/agent/pkg/logger"
-	"github.com/nezhahq/agent/pkg/monitor/conn"
-	"github.com/nezhahq/agent/pkg/monitor/cpu"
-	"github.com/nezhahq/agent/pkg/monitor/disk"
-	"github.com/nezhahq/agent/pkg/monitor/gpu"
-	"github.com/nezhahq/agent/pkg/monitor/load"
-	"github.com/nezhahq/agent/pkg/monitor/nic"
-	"github.com/nezhahq/agent/pkg/monitor/temperature"
-	"github.com/nezhahq/agent/pkg/util"
+	"github.com/shuijiao1/Kulin-Agent/model"
+	"github.com/shuijiao1/Kulin-Agent/pkg/logger"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/conn"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/cpu"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/disk"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/gpu"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/load"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/nic"
+	"github.com/shuijiao1/Kulin-Agent/pkg/monitor/temperature"
+	"github.com/shuijiao1/Kulin-Agent/pkg/util"
 )
 
 var (

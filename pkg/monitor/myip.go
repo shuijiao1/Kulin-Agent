@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/nezhahq/agent/pkg/logger"
-	"github.com/nezhahq/agent/pkg/util"
-	pb "github.com/nezhahq/agent/proto"
+	"github.com/shuijiao1/Kulin-Agent/pkg/logger"
+	"github.com/shuijiao1/Kulin-Agent/pkg/util"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 )
 
 var (

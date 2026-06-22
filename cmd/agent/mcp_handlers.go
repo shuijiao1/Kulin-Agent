@@ -18,9 +18,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/nezhahq/agent/model"
-	"github.com/nezhahq/agent/pkg/processgroup"
-	pb "github.com/nezhahq/agent/proto"
+	"github.com/shuijiao1/Kulin-Agent/model"
+	"github.com/shuijiao1/Kulin-Agent/pkg/processgroup"
+	pb "github.com/shuijiao1/Kulin-Agent/proto"
 )
 
 const (
