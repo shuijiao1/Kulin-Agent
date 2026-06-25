@@ -7,22 +7,21 @@ Kulin Agent 是 Kulin 面板配套的轻量服务器探针，基于 Nezha Agent 
 Linux / macOS：
 
 ```bash
-curl -L https://raw.githubusercontent.com/shuijiao1/Kulin/master/script/agent-install.sh -o kulin-agent.sh && chmod +x kulin-agent.sh && env NZ_SERVER=<面板Agent地址> NZ_TLS=true NZ_CLIENT_SECRET=<Agent密钥> ./kulin-agent.sh
+curl -L https://raw.githubusercontent.com/shuijiao1/Kulin/master/script/agent-install.sh -o kulin-agent.sh && chmod +x kulin-agent.sh && env KULIN_SERVER=<面板Agent地址:端口> KULIN_TLS=true KULIN_CLIENT_SECRET=<Agent密钥> ./kulin-agent.sh
 ```
 
 Windows PowerShell：
 
 ```powershell
-$env:NZ_SERVER="<面板Agent地址>";$env:NZ_TLS="true";$env:NZ_CLIENT_SECRET="<Agent密钥>";Invoke-WebRequest https://raw.githubusercontent.com/shuijiao1/Kulin/master/script/agent-install.ps1 -OutFile C:\kulin-agent.ps1;powershell.exe C:\kulin-agent.ps1
+$env:KULIN_SERVER="<面板Agent地址:端口>";$env:KULIN_TLS="true";$env:KULIN_CLIENT_SECRET="<Agent密钥>";Invoke-WebRequest https://raw.githubusercontent.com/shuijiao1/Kulin/master/script/agent-install.ps1 -OutFile C:\kulin-agent.ps1;powershell.exe C:\kulin-agent.ps1
 ```
 
 可选环境变量：
 
-- `NZ_UUID`：指定服务器 UUID
-- `NZ_DISABLE_AUTO_UPDATE`：禁用自动更新
-- `NZ_DISABLE_FORCE_UPDATE`：禁用强制更新
-- `NZ_DISABLE_COMMAND_EXECUTE`：禁用命令执行
-- `NZ_SKIP_CONNECTION_COUNT`：跳过连接数采集
+- `KULIN_UUID`：指定服务器 UUID
+- `KULIN_AGENT_VERSION`：指定安装版本
+- `KULIN_AGENT_INSTALL_DIR`：指定安装目录
+- `KULIN_AGENT_CONFIG`：指定配置文件路径
 
 ## 发布
 
